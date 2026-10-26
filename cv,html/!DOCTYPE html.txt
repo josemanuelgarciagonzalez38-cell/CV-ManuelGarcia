@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV | José Manuel García González</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #edf0f5;
+  color: #252c3d;
+  padding: 35px 15px;
+}
+
+.cv {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px #18274718;
+}
+
+/* ENCABEZADO */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 40px;
+  background: #fff;
+}
+
+.photo {
+  width: 155px;
+  height: 155px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 5px solid #e1e9f7;
+  outline: 2px solid #315b9b;
+  object-fit: cover;
+}
+
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf0fa;
+  color: #315b9b;
+  font-size: 50px;
+}
+
+.hero-info {
+  border-left: 3px solid #315b9b;
+  padding-left: 25px;
+}
+
+.eyebrow {
+  color: #5277ad;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: clamp(25px, 4vw, 39px);
+  line-height: 1.2;
+  color: #202a40;
+  font-weight: 800;
+}
+
+.hero-info p {
+  margin-top: 12px;
+  color: #647087;
+  font-size: 14px;
+}
+
+/* CUERPO */
+.content {
+  display: grid;
+  grid-template-columns: 0.85fr 1.4fr;
+  gap: 25px;
+  padding: 0 30px 30px;
+}
+
+.left, .right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  padding: 23px;
+  border-radius: 16px;
+  background: #f7f9fc;
+  border: 1px solid #e9edf4;
+}
+
+.card.blue {
+  background: #315b9b;
+  color: white;
+  border: none;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-title .icon {
+  width: 39px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #e4ebf8;
+  color: #315b9b;
+  flex-shrink: 0;
+}
+
+.blue .section-title .icon {
+  background: #ffffff25;
+  color: white;
+}
+
+h2 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.section-title::after {
+  content: "";
+  height: 2px;
+  background: #dce4f1;
+  flex: 1;
+}
+
+.blue .section-title::after {
+  background: #ffffff55;
+}
+
+/* CONTACTO */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 17px;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-item i {
+  color: #315b9b;
+  width: 18px;
+  padding-top: 3px;
+  flex-shrink: 0;
+}
+
+.contact-item strong {
+  display: block;
+  font-size: 12px;
+}
+
+.contact-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* HABILIDADES */
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 13px;
+  border-bottom: 1px solid #e4e9f1;
+}
+
+.skill:last-child {
+  border-bottom: none;
+}
+
+.skill i {
+  width: 22px;
+  color: #315b9b;
+  text-align: center;
+}
+
+/* SOBRE MÍ */
+.about-text {
+  color: #58647a;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* EDUCACIÓN */
+.education-item {
+  position: relative;
+  padding: 0 0 23px 24px;
+  margin-left: 8px;
+  border-left: 2px solid #d9e3f3;
+}
+
+.education-item:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.education-item::before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  left: -7px;
+  top: 4px;
+  border-radius: 50%;
+  background: #315b9b;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #315b9b;
+}
+
+.year {
+  color: #315b9b;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.education-item h3 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.education-item p {
+  color: #69748a;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.7;
+}
+
+/* FRASE */
+.quote {
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.quote i {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 23px;
+}
+
+/* PIE */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #8791a3;
+  background: #fafbfd;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 650px) {
+  body {
+    padding: 12px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .hero-info {
+    border-left: none;
+    border-top: 3px solid #315b9b;
+    padding: 20px 0 0;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    padding: 0 15px 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  .cv {
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .card {
+    break-inside: avoid;
+  }
+
+  @page {
+    size: A4;
+    margin: 8mm;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="cv">
+
+  <header class="hero">
+    <!-- Fotografía integrada -->
+   <img src="https://tu-enlace-de-internet.com/1000044061.jpeg" alt="Mi foto" class="photo" ...>"
+     
+   
+      onerror="this.style.display='none';
+      document.getElementById('photoPlaceholder').style.display='flex';"
+    >
+
+    <div id="photoPlaceholder"
+         class="photo photo-placeholder"
+         style="display:none">
+      <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div class="hero-info">
+      <div class="eyebrow">CURRÍCULUM VITAE</div>
+      <h1>José Manuel<br>García González</h1>
+      <p><i class="fa-solid fa-briefcase"></i>
+        Perfil profesional · Aprendizaje y tecnología
+      </p>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <aside class="left">
+
+      <section class="card">
+        <div class="section-title">
+          <span class="icon"><i class="fa-solid fa-address-card"></i></span>
+          <h2>Contacto</h2>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <div><strong>Teléfono</strong>
+            <a href="tel:+50232422176">+502 3242 2176</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div><strong>Correo electrónico</strong>
+            <a href="mailto:josemanuelgarciagonzalez38@gmail.com">
+              josemanuelgarciagonzalez38@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div><strong>Dirección</strong>
+            Cantón Chibaj, Aldea El Mansanillo, Lote 82
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <span class="icon"><i class="fa-solid fa-laptop-code"></i></span>
+          <h2>Habilidades</h2>
+        </div>
+
+        <div class="skill">
+          <i class="fa-solid fa-code"></i>
+          <span>Programación</span>
+        </div>
+        <div class="skill">
+          <i class="fa-brands fa-figma"></i>
+          <span>Figma · Nivel medio</span>
+        </div>
+        <div class="skill">
+          <i class="fa-solid fa-file-excel"></i>
+          <span>Excel · Nivel medio</span>
+        </div>
+        <div class="skill">
+          <i class="fa-solid fa-desktop"></i>
+          <span>Manejo de sistemas operativos</span>
+        </div>
+        <div class="skill">
+          <i class="fa-solid fa-clock"></i>
+          <span>Puntualidad y respeto</span>
+        </div>
+        <div class="skill">
+          <i class="fa-solid fa-lightbulb"></i>
+          <span>Aprendizaje rápido y adaptación</span>
+        </div>
+      </section>
+
+      <section class="card blue">
+        <div class="quote">
+          <i class="fa-solid fa-quote-left"></i>
+          Siempre dispuesto a aprender,
+          crecer y dar lo mejor de mí.
+        </div>
+      </section>
+
+    </aside>
+
+    <div class="right">
+
+      <section class="card">
+        <div class="section-title">
+          <span class="icon"><i class="fa-solid fa-user"></i></span>
+          <h2>Sobre mí</h2>
+        </div>
+
+        <p class="about-text">
+          Soy una persona responsable, con deseos de superación,
+          facilidad para aprender y capacidad de adaptarme a
+          diferentes entornos de trabajo. Me interesa desarrollar
+          mis conocimientos, adquirir nuevas experiencias y aportar
+          lo mejor de mí en cada oportunidad.
+        </p>
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
+          <h2>Educación</h2>
+        </div>
+
+        <div class="education-item">
+          <div class="year">2014 — 2020</div>
+          <h3>Educación primaria</h3>
+          <p>Escuela Oficial Urbana Mixta República Federal de Centro América</p>
+        </div>
+
+        <div class="education-item">
+          <div class="year">2021 — 2023</div>
+          <h3>Educación básica</h3>
+          <p>Ciclo básico completado, según los datos proporcionados.</p>
+        </div>
+
+        <div class="education-item">
+          <div class="year">2025 — 2026</div>
+          <h3>Diversificado</h3>
+          <p>Liceo Cristiano de Estudios Avanzados Elim</p>
+          <p>Finalizando diversificado</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <span class="icon"><i class="fa-solid fa-star"></i></span>
+          <h2>Objetivo profesional</h2>
+        </div>
+
+        <p class="about-text">
+          Obtener una oportunidad laboral donde pueda aplicar mis
+          habilidades, aprender nuevas funciones y contribuir al
+          cumplimiento de los objetivos de la empresa.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    RESPONSABILIDAD · COMPROMISO · SUPERACIÓN
+  </footer>
+
+</div>
+</body>
+</html>
